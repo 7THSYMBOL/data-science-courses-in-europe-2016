@@ -1,80 +1,90 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
-  <div class='container'>
-  <div class="well pull-right">
-    <p><a class="btn btn-primary btn-block" href="datapackage.json"><i class="fa fa-cloud-download"></i> Download Datapackage</a></p>
-    <p><a class="btn btn-default btn-block" href="{{ site.github.repository_url }}"><i class="fa fa-github"></i> View on GitHub</a></p>
-    <p><a class="btn btn-default btn-block" href="{{ site.github.repository_url }}/commits/gh-pages.atom"><i class="fa fa-rss"></i> Subscribe to changes</a></p>
-  </div>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-  <h1 property="dct:title">{{ site.data.datapackage.title }}</h1>
+    <title>Data-Scientist  by 7THSYMBOL</title>
+  </head>
 
-  <p property="dct:description">{{ site.data.datapackage.description }}</p>
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Data-Scientist </h1>
+        <h2>Data-Scientist/ Digital healt and more</h2>
+        <a href="https://github.com/7THSYMBOL/data-science-courses-in-europe-2016" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
 
-  <p property="dct:license" resource="{{ site.data.datapackage.licenses.first['url'] }}">
-    <strong>License</strong><br />
-    <a href="{{ site.data.datapackage.licenses.first['url'] }}"><span property="dct:title">{{ site.data.datapackage.licenses.first['title'] }}</span></a>
-  </p>
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <p>Some say big data is the answer. Although the health care industry has been notoriously slow to harness its power.</p>
 
-  <p property="dct:publisher" resource="{{ site.data.datapackage.publishers.first['web'] }}">
-  	<strong property="rdfs:label">Publisher</strong><br />
-  	<a href="{{ site.data.datapackage.publishers.first.['web'] }}" about="{{ site.data.datapackage.publishers.first['web'] }}" property="foaf:homepage">
-  		<span property="foaf:name">{{ site.data.datapackage.publishers.first['name'] }}</span>
-  	</a>
-  </p>
+<p>Accelerating costs are forcing payors and health-care providers to shift from a fee-for-service approach (the more treatments, the better) to one that favors patient outcomes (rewarding providers for targeted treatments that actually work).</p>
 
-  <p>
-  	<strong property="rdfs:label">Update frequency</strong><br />
-  	<span property="dcat:accrualPeriodicity">{{ site.update_frequency }}</span>
-  </p>
+<p>Physicians are continuing to move towards evidence-based medicine, reviewing data from a huge range of sources before making treatment decisions.</p>
 
-  <h2>Files</h2>
+<p>Personalized Medicine</p>
 
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Format</th>
-        <th>Description</th>
-        <th>Data</th>
-        <th>Download</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for resource in site.data.datapackage.resources %}
-      <tr property='dcat:distribution' typeof='dcat:Distribution'>
-        <td property="dcat:title">{{ resource.name }}</td>
-        <td property="dcat:format">{{ resource.mediatype }}</td>
-        <td property="dcat:description">{{ resource.description }}</td>
-	{% if resource.mediatype == "text/csv" %}
-	 <td><a href="{{ resource.path | split:"." | first }}.html"><i class="fa fa-search"></i> View</a></td>
-	{% else %}
-         <td></td>
-        {% endif %}
-        <td><a href="{{ resource.path }}" property='dcat:accessURL'><i class="fa fa-cloud-download"></i> Download</a></td>
-	{% if resource.mediatype == "text/csv" %}
-         {% unless resource.path contains 'http' %}
-          <td><a href="http://csvlint.io/?uri={{ site.github.url }}/{{ resource.path }}"><img src="http://csvlint.io/?uri={{ site.github.url }}/{{ resource.path }}&format=svg" alt="CSVlint validation result" /></a></td>
-         {% else %}
-          <td><a href="http://csvlint.io/?uri={{ resource.path }}"><img src="http://csvlint.io/?uri={{ resource.path }}&format=svg" alt="CSVlint validation result" /></a></td>
-         {% endunless %}
-        {% else %}
-	 <td></td>
-        {% endif %}
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+<p>Imagine you’re a doctor treating a patient with cancer. In the past, you might have based your treatment plan on the results of double-blind studies. These studies may have been rigorous, but they may have failed to take patient differences into account.</p>
 
-  <h2>Support</h2>
+<p>Big data changes the game. Now you can merge and analyze data sets from:</p>
 
-    <p>If you have support queries, suggestions or corrections to the data, please <a href="{{ site.github.issues_url }}" target="_blank">file a new issue</a> in our GitHub repository.</p>
+<ul>
+<li>Clinical trials</li>
+<li>Direct observations of other physicians</li>
+<li>Electronic medical records</li>
+<li>Online patient networks</li>
+<li>Genomics research (see below) and more…</li>
+</ul>
 
-	  <p>All comments and subsequent fixes will be <a href="{{ site.github.issues_url }}" target="_blank">logged openly</a> such that you can easily see the provenance of each object in this dataset.</p>
+<p>One of the top goals is to create a personalized treatment plan based on individual biology. Instead of treating your patient with a drug that works 80% of the time (e.g., the breast cancer drug, Tamoxifen), you can employ data science to custom-tailor a regimen just for her.</p>
 
-    <p class="lastUpdate text-right">Last update: {{ site.time | date: '%Y-%m-%d at %H:%M' }}</p>
+<p>Genomics</p>
 
-  </div>
+<p>Inexpensive DNA sequencing and next-generation genomic technologies are changing the way health care providers do business. </p>
+
+<p>Predictive Analytics and Preventive Measures</p>
+
+<p>Prevention is always better than cure. For the health-care industry, it also happens to save a lot of money. (The Centers for Medicaid and Medicare Services, for instance, can penalize hospitals that exceed average rates of readmission – indicating that they could be doing more to prevent medical problems.)</p>
+
+<p>Self-Motivated Care</p>
+
+<p>It’s a “patient heal thyself” world, now. Developments like personal genetic testing (e.g., 23andMe.com), online patient networks and behavioral apps like Be Well are allowing individuals to take control of their own health.</p>
+
+<p><a href="https://www.7thsymbol.co">https://www.7thsymbol.co</a>
+A Digital Health transformation agile collaboration between, medics and their finger on the pulse, web developers, graphic designers, for a saving of lives.</p>
+
+<p>There’s no shame in starting small when you’re laying the foundation for something great. That’s precisely what we’re doing. We’ll share more when we’re ready, so check back with us soon.</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/7THSYMBOL/data-science-courses-in-europe-2016/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/7THSYMBOL/data-science-courses-in-europe-2016/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/7THSYMBOL/data-science-courses-in-europe-2016"></a> is maintained by <a href="https://github.com/7THSYMBOL">7THSYMBOL</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
